@@ -1,0 +1,20 @@
+{
+  "name": "response-handler",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/response-handler/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/response-handler",
+        "tsConfig": "packages/response-handler/tsconfig.lib.json",
+        "packageJson": "packages/response-handler/package.json",
+        "main": "packages/response-handler/src/index.ts",
+        "assets": ["packages/response-handler/*.md"]
+      }
+    }
+  }
+}
