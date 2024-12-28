@@ -3,7 +3,7 @@
 # compiled output
 dist
 tmp
-out-tsc
+/out-tsc
 
 # dependencies
 node_modules
@@ -40,3 +40,74 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+
+# Additional
+node_modules
+dist/
+build
+# swarm.key
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables file
+.env
+
+# OS X temporary files
+.DS_Store
+
+### IPFS ###
+.ipfs
+.web3.sotage
+### VisualStudioCode ###
+.vscode
+
+#jetbraines
+.idea
+
+### Linux ###
+*~
+
+# Output of 'npm pack'
+*.tgz
+
+# Logs
+*.log
+npm-debug.log*
+
+coverage/
+
+.npmrc
+
+.item/
+
+.env.*
+
+.npmrc
+
+yarn.lock
+uploads
+
+
+global-bundle.pem
+
+logs
+*.drawio
+.$*
+
+kill-dockers.sh
+
+instruction.md
+
+systemdesign.md
+
+*.html
+
+*.mdx
+
+
+*.log
+tmp

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-nestjs-boilerplate-server/grpc": ["packages/grpc/src/index.ts"],
       "@nx-nestjs-boilerplate-server/response-handler": [
         "packages/response-handler/src/index.ts"
       ]
