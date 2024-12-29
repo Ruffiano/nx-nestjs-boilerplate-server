@@ -2,9 +2,14 @@
   "name": "@nx-nestjs-boilerplate-server/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "proto:generate": "protoc --doc_out=./packages/proto-grpc/src/proto/docs --doc_opt=html,index.html --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./packages/proto-grpc/src/proto/pb -I=./packages/proto-grpc/src/proto ./packages/proto-grpc/src/proto/schema/*.proto --ts_proto_opt=esModuleInterop=true --ts_proto_opt=nestJs=true --ts_proto_opt=addGrpcMetadata=false --ts_proto_opt=addNestjsRestParameter=true --ts_proto_opt=returnObservable=false --ts_proto_opt=snakeToCamel=false --ts_proto_opt=useObjectId=true --ts_proto_opt=lowerCaseServiceMethods=true"
+  },
   "private": true,
   "dependencies": {
+    "@grpc/grpc-js": "^1.10.10",
+    "protobufjs": "^7.4.0",
+    "ts-proto": "^1.181.0",
     "@nestjs/common": "^10.4.15",
     "@nestjs/core": "^10.4.15",
     "@nestjs/microservices": "^10.4.15",
