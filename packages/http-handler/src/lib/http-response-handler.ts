@@ -1,4 +1,4 @@
-// packages/response-handler/src/lib/response-handler.ts
+// packages/http-handler/src/lib/http-handler.ts
 import { ExceptionFilter, Catch, ArgumentsHost, HttpStatus, HttpException } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
 import HttpErrorTypes from './httpErrorTypes';

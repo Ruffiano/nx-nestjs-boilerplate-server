@@ -6,36 +6,29 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/esbuild:esbuild",
+      "executor": "@nx/rspack:rspack",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "platform": "node",
+        "target": "node",
         "outputPath": "dist/apps/auth-service",
         "format": ["cjs"],
         "bundle": false,
         "main": "apps/auth-service/src/main.ts",
         "tsConfig": "apps/auth-service/tsconfig.app.json",
-        "assets": ["apps/auth-service/src/assets"],
-        "generatePackageJson": true,
-        "esbuildOptions": {
-          "sourcemap": true,
-          "outExtension": {
-            ".js": ".js"
+        "rspackConfig": "apps/auth-service/rspack.config.js",
+        "assets": ["apps/auth-service/src/assets", 
+          {
+            "input": "packages/proto-grpc/src",
+            "glob": "**/*.proto",
+            "output": "proto-grpc"
           }
-        }
+        ],
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {},
-        "production": {
-          "generateLockfile": true,
-          "esbuildOptions": {
-            "sourcemap": false,
-            "outExtension": {
-              ".js": ".js"
-            }
-          }
-        }
+        "production": {}
       }
     },
     "serve": {
@@ -48,7 +41,9 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "auth-service:build:development"
+          "buildTarget": "auth-service:build:development",
+          "inspect": "inspect",
+          "port": 9236
         },
         "production": {
           "buildTarget": "auth-service:build:production"

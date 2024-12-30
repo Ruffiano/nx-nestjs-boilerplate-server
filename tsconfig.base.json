@@ -15,10 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-nestjs-boilerplate-server/grpc": ["packages/grpc/src/index.ts"],
-      "@nx-nestjs-boilerplate-server/response-handler": [
-        "packages/response-handler/src/index.ts"
-      ]
+      "@nx-nestjs-boilerplate-server/proto-grpc": ["packages/proto-grpc/src/index.ts"],
+      "@nx-nestjs-boilerplate-server/http-handler": ["packages/http-handler/src/index.ts"],
+      "@nx-nestjs-boilerplate-server/sqlml": ["packages/sqlml/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

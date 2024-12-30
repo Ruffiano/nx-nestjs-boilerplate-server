@@ -1,19 +1,29 @@
 {
-  "name": "response-handler",
+  "name": "http-handler",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/response-handler/src",
+  "sourceRoot": "packages/http-handler/src",
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "outputPath": "dist/packages/response-handler",
-        "tsConfig": "packages/response-handler/tsconfig.lib.json",
-        "packageJson": "packages/response-handler/package.json",
-        "main": "packages/response-handler/src/index.ts",
-        "assets": ["packages/response-handler/*.md"]
+        "lintFilePatterns": ["packages/http-handler/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/http-handler/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     }
   }

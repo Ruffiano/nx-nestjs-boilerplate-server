@@ -37,7 +37,7 @@ help:
 # Run all projects using Nx CLI
 .PHONY: run-all
 run-all:
-	nx run-many --target=serve --all --parallel --maxParallel=11
+	nx run-many --target=serve --all --parallel --maxParallel=2
 
 # Run a single project using Nx CLI
 .PHONY: run

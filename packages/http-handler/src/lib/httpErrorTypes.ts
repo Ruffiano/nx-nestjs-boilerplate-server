@@ -39,6 +39,16 @@ class HttpErrorTypes extends Error {
     static AUTH_OTP_EXPIRED = new HttpErrorTypes(4101, 'AUTH_OTP_EXPIRED', 401);
     static AUTH_OTP_NOT_FOUND = new HttpErrorTypes(4102, 'AUTH_OTP_NOT_FOUND', 404);
 
+
+
+    // API KET
+    static API_KEY_INVALID = new HttpErrorTypes(5000, 'API_KEY_INVALID', 401);
+    static API_KEY_NOT_FOUND = new HttpErrorTypes(5001, 'API_KEY_NOT_FOUND', 404);
+    static API_KEY_BLACKLISTED = new HttpErrorTypes(5002, 'API_KEY_BLACKLISTED', 401);
+    static API_KEY_PERMISSION_DENIED = new HttpErrorTypes(5003, 'API_KEY_PERMISSION_DENIED', 401);
+    static API_KEY_EXPIRED = new HttpErrorTypes(5004, 'API_KEY_EXPIRED', 401);
+    static API_KEY_ALREADY_EXISTS = new HttpErrorTypes(5005, 'API_KEY_ALREADY_EXISTS', 409);
+
     code: number;
     statusCode: number;
     details: any;

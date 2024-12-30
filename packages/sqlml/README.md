@@ -1,7 +1,5 @@
-# sqlml
+SQLML is Custom DB Schema Generator for NestJS created by Ruffiano.
 
-This library was generated with [Nx](https://nx.dev).
 
-## Running unit tests
-
-Run `nx test sqlml` to execute the unit tests via [Jest](https://jestjs.io).
+dbml schema url:
+https://dbdiagram.io/d/nx-nestjs-microservice-boilerplate-63c2b2b5296d97641d79a4d2
