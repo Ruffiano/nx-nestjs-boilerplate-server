@@ -1,0 +1,39 @@
+Table user {
+  id uuid [pk, default: `gen_random_uuid()`]
+  email varchar [not null]
+  password varchar [not null]
+  username varchar [not null]
+  useragent jsonb [note: 'country, region, timezone, city, ll, metro, area, os, browser, deviceType, user_last_login_date, user_ip']
+  authType varchar [not null, note: 'user role']
+  isVerified boolean [not null, default: false]
+  isBlocked boolean [not null, default: false]
+  createdAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  updatedAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+}
+
+Table token {
+  id uuid [pk, default: `gen_random_uuid()`]
+  userId uuid [not null, ref: > user.id]
+  token varchar [not null]
+  tokenType varchar [not null]
+  expires timestamp [not null]
+  blackListed boolean [not null, default: false]
+  createdAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  updatedAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  indexes {
+    userId
+  }
+}
+
+Table profile {
+  id uuid [pk, default: `gen_random_uuid()`]
+  userId uuid [not null, ref: > user.id]
+  nickName varchar [not null]
+  thumbnailCid varchar [not null]
+  createdAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  updatedAt timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    userId
+  }
+}
